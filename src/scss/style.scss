@@ -23,10 +23,26 @@ a:hover {
   color: #535bf2;
 }
 
+#pageTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.pokeBallLogo {
+  width: 100px;
+  margin-left: 2em;
+  border: solid white;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -41,27 +57,6 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 button {
@@ -94,4 +89,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+#searchPokemon {
+  padding: 1em;
+  width: 200px;
+  box-sizing: border-box;
+
+}
+
+#searchResults {
+  width: 600px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto; 
+  border: solid whitesmoke;
+  border-radius: 1em;
 }
