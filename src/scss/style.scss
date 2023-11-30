@@ -3,15 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -57,16 +48,22 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: solid black;
+  border-radius: 1em;
 }
 
 button {
+  color: whitesmoke;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid black;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: crimson;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -92,9 +89,10 @@ button:focus-visible {
 }
 
 #searchPokemon {
-  padding: 1em;
+  padding: 0.5em;
   width: 200px;
   box-sizing: border-box;
+  border-radius: 8px;
 
 }
 
@@ -104,6 +102,6 @@ button:focus-visible {
   max-height: 300px;
   overflow-x: hidden;
   overflow-y: auto; 
-  border: solid whitesmoke;
+  border: solid black;
   border-radius: 1em;
 }
