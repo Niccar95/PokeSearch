@@ -1,6 +1,7 @@
 import './../scss/style.scss'
-import { createHtml } from './pokemonService';
-import { fetchData } from './serviceBase';
+import { createHtml } from './createHtml';
+import { fetchData } from './services/serviceBase';
+
 
 const pageTop = document.getElementById("pageTop");
 
