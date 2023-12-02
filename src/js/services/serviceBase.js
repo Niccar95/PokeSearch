@@ -1,10 +1,10 @@
 
-export const fetchData = async (searchPokemon) => {
-  const pokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + searchPokemon + "?limit=151");
+export const get = async (url) => {
+  const pokemon = await fetch(url);
   return pokemon.json();
 };
 
-
+// Set to keep track of displayed Pokémon
 const displayedPokemon = new Set();
 
 

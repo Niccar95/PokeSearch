@@ -1,6 +1,7 @@
 import './../scss/style.scss'
 import { createHtml } from './createHtml';
-import { fetchData } from './services/serviceBase';
+import { fetchPokemon } from './services/pokemonService';
+
 
 
 const pageTop = document.getElementById("pageTop");
@@ -25,7 +26,7 @@ e.preventDefault();
 
 const searchPokemon = document.getElementById("searchPokemon").value;
 
-const data = await fetchData(searchPokemon);
+const data = await fetchPokemon(searchPokemon);
 
 createHtml(data);
 

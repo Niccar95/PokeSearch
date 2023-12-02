@@ -11,6 +11,7 @@ const displayedPokemon = new Set();
   */
   
   if (!displayedPokemon.has(pokemonData.name)) { 
+    
   const pokemonSprite = document.createElement("img");
   pokemonSprite.src = pokemonData.sprites.front_default;
   pokemonSprite.alt = pokemonData.name;
