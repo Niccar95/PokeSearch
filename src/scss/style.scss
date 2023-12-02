@@ -51,8 +51,10 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  border: solid black;
+  background-color: rgb(230, 230, 230);
   border-radius: 1em;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 button {
@@ -102,6 +104,7 @@ button:focus-visible {
   max-height: 300px;
   overflow-x: hidden;
   overflow-y: auto; 
-  border: solid black;
-  border-radius: 1em;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  border-radius: 0.5em;
 }
