@@ -34,6 +34,15 @@ const displayedPokemon = new Set();
   };
 
 
+
+  const searchInput = document.getElementById("searchPokemon");
+  
+  searchInput.disabled = true;
+
+
+
+    
+    
   const timerStartButton = document.getElementById("timerStartButton");
   timerStartButton.innerHTML = "Start Challenge";
 
@@ -46,9 +55,13 @@ const displayedPokemon = new Set();
 
   let interval = 0;
 
+
   timerEndButton.hidden = true;
  
   timerStartButton.addEventListener("click", ()=> {
+
+    searchInput.disabled = false;
+  
 
     interval = setInterval(() => {
       timer.innerHTML = i + " seconds";
@@ -61,19 +74,17 @@ const displayedPokemon = new Set();
   });
 
     timerEndButton.addEventListener("click", ()=> {
+      searchInput.disabled = true;
       clearInterval(interval);
       i = 600;
       timer.innerHTML = " ";
+
       timerStartButton.hidden = false;
       timerEndButton.hidden = true;
 
   });
 
   
-  
-
-  
-
 
 
   

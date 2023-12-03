@@ -20,9 +20,13 @@ const pokemonForm = document.getElementById("pokemonForm");
 
 
 
+
+
 pokemonForm.addEventListener("submit", async (e) => {
 
+
 e.preventDefault();
+
 
 const searchPokemon = document.getElementById("searchPokemon").value;
 
