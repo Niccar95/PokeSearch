@@ -37,11 +37,7 @@ const displayedPokemon = new Set();
 
   const searchInput = document.getElementById("searchPokemon");
   
-  searchInput.disabled = true;
-
-
-
-    
+  searchInput.disabled = true; 
     
   const timerStartButton = document.getElementById("timerStartButton");
   timerStartButton.innerHTML = "Start Challenge";

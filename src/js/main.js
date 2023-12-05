@@ -20,7 +20,11 @@ const pokemonForm = document.getElementById("pokemonForm");
 
 
 
+const counterContainer = document.getElementById("counterContainer");
+const pokemonCounter = document.getElementById("pokemonCounter");
 
+
+let counter = 0;
 
 pokemonForm.addEventListener("submit", async (e) => {
 
@@ -35,6 +39,11 @@ const data = await fetchPokemon(searchPokemon);
 createHtml(data);
 
 document.getElementById("searchPokemon").value = "";
+
+
+counter++;
+
+pokemonCounter.innerHTML = "Amount of Pokemon found: " + counter.toString();
 
 });
 
