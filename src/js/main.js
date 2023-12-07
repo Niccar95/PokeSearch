@@ -1,5 +1,5 @@
 import './../scss/style.scss'
-import { createHtml } from './createHtml';
+import { createHtml, pokemonCounter } from './createHtml';
 import { fetchPokemon } from './services/pokemonService';
 
 
@@ -18,13 +18,9 @@ pageTop.appendChild(pokeBallLogo);
 
 const pokemonForm = document.getElementById("pokemonForm");
 
+const pokemonCounterText = document.getElementById("pokemonCounter");
 
 
-const counterContainer = document.getElementById("counterContainer");
-const pokemonCounter = document.getElementById("pokemonCounter");
-
-
-let counter = 0;
 
 pokemonForm.addEventListener("submit", async (e) => {
 
@@ -40,10 +36,9 @@ createHtml(data);
 
 document.getElementById("searchPokemon").value = "";
 
+const counterUpdate = pokemonCounter();
 
-counter++;
-
-pokemonCounter.innerHTML = "Amount of Pokemon found: " + counter.toString();
+pokemonCounterText.innerHTML = "Amount of Pokemon found: " + counterUpdate;
 
 });
 

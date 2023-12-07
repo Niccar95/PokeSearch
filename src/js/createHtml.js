@@ -2,13 +2,26 @@
 const searchResults = document.getElementById("searchResults");
 const displayedPokemon = new Set();
 
+let counter = 0;
+
+
+export const pokemonCounter = () => {
+return counter;
+};
+
+
+
  export const createHtml = (pokemonData) => {
 
+  
   /*
+  
   const pokemonName = document.createElement("p");
   searchResults.appendChild(pokemonName);
   pokemonName.innerHTML = `${pokemonData.name}`;
+
   */
+  
   
   if (!displayedPokemon.has(pokemonData.name)) { 
     
@@ -17,9 +30,13 @@ const displayedPokemon = new Set();
   pokemonSprite.alt = pokemonData.name;
   pokemonSprite.title = pokemonData.name;
   searchResults.appendChild(pokemonSprite);
-  
+  displayedPokemon.add(pokemonData.name);
+  counter++;
+
   }
-    displayedPokemon.add(pokemonData.name);
+  
+  
+  console.log(displayedPokemon);
   
   
     if (displayedPokemon.size === 151) {
@@ -28,7 +45,6 @@ const displayedPokemon = new Set();
       const congratulations = document.createElement("p");
       progressContainer.appendChild(congratulations);
       congratulations.innerHTML = "Congratulations! You have listed all the Pokemon from the Kanto region!";
-  
     }
   
   };
