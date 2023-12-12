@@ -6,10 +6,6 @@ import { fetchPokemon } from './services/pokemonService';
 
 const pageTop = document.getElementById("pageTop");
 
-const pageTitle = document.createElement("h1");
-pageTitle.innerHTML = "PokeSearch";
-pageTop.appendChild(pageTitle);
-
 const pokeBallLogo = document.createElement("img");
 pokeBallLogo.src = "/src/img/pokeball.svg";
 pokeBallLogo.className = "pokeBallLogo";

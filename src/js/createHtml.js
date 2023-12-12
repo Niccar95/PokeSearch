@@ -10,18 +10,13 @@ return counter;
 };
 
 
-
  export const createHtml = (pokemonData) => {
-
   
   /*
-  
   const pokemonName = document.createElement("p");
   searchResults.appendChild(pokemonName);
   pokemonName.innerHTML = `${pokemonData.name}`;
-
   */
-  
   
   if (!displayedPokemon.has(pokemonData.name)) { 
     
@@ -35,9 +30,7 @@ return counter;
 
   }
   
-  
   console.log(displayedPokemon);
-  
   
     if (displayedPokemon.size === 151) {
   
