@@ -1,5 +1,6 @@
 
 const searchResults = document.getElementById("searchResults");
+const foundPokemonNameContainer = document.getElementById("foundPokemonNameContainer");
 const displayedPokemon = new Set();
 
 let counter = 0;
@@ -11,14 +12,11 @@ return counter;
 
 
  export const createHtml = (pokemonData) => {
+
+  const pokemonId = pokemonData.id;
   
-  /*
-  const pokemonName = document.createElement("p");
-  searchResults.appendChild(pokemonName);
-  pokemonName.innerHTML = `${pokemonData.name}`;
-  */
   
-  if (!displayedPokemon.has(pokemonData.name)) { 
+  if (pokemonId >= 1 && pokemonId <= 151 && !displayedPokemon.has(pokemonData.name)) { 
     
   const pokemonSprite = document.createElement("img");
   pokemonSprite.src = pokemonData.sprites.front_default;
@@ -27,10 +25,25 @@ return counter;
   searchResults.appendChild(pokemonSprite);
   displayedPokemon.add(pokemonData.name);
   counter++;
+  }
 
+  else {
+    pokemonName.innerHTML = ""; 
   }
   
-  console.log(displayedPokemon);
+
+  if(pokemonId >= 1 && pokemonId <= 151 && !displayedPokemon.has(pokemonId)) {
+    const foundPokemonNameContainer = document.getElementById("foundPokemonNameContainer");
+
+    const pokemonNameText = document.createElement("p");
+      foundPokemonNameContainer.appendChild(pokemonNameText);
+      pokemonNameText.innerHTML = pokemonData.name;
+  } 
+
+  else {
+    pokemonNameText.innerHTML = "";
+
+  }
   
     if (displayedPokemon.size === 151) {
   

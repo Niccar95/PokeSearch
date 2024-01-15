@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -34,8 +39,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -43,13 +46,29 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
+#mainContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border: solid black;
+  width: 100%;
+}
+
+#foundPokemonNameContainer {
+  position: absolute;
+  border: solid black;
+  width: 250px;
+  height: 100%;
+  left: 5em;
+}
+
+#pokeSearchContainer {
+  width: 50%;
   padding: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1em;
   background-color: rgb(230, 230, 230);
   border-radius: 0.5em;
@@ -95,18 +114,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
 
 #searchPokemon {
   padding: 0.5em;
@@ -117,7 +124,7 @@ button:focus-visible {
 }
 
 #searchResults {
-  width: 600px;
+  width: 100%;
   height: 300px;
   max-height: 300px;
   overflow-x: hidden;
