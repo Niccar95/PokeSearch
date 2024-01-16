@@ -50,17 +50,33 @@ h1 {
   position: relative;
   display: flex;
   justify-content: center;
-  border: solid black;
   width: 100%;
 }
 
-#foundPokemonNameContainer {
+#pokemonNameContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5em;
   position: absolute;
-  border: solid black;
   width: 250px;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
   left: 5em;
+  padding: 2rem;
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.5em;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+
+  .pokemonNameText {
+    display: inline-block;
+    background-color: whitesmoke;
+    padding: 0.3em;
+    margin: 0;
+  }
 }
+
 
 #pokeSearchContainer {
   width: 50%;

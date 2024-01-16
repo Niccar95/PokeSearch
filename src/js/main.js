@@ -1,7 +1,7 @@
 import './../scss/style.scss'
+import { challengeTimer } from './challengeTimer';
 import { createHtml, pokemonCounter } from './createHtml';
 import { fetchPokemon } from './services/pokemonService';
-
 
 
 const pageTop = document.getElementById("pageTop");
@@ -16,7 +16,7 @@ const pokemonForm = document.getElementById("pokemonForm");
 
 const pokemonCounterText = document.getElementById("pokemonCounter");
 
-
+challengeTimer();
 
 pokemonForm.addEventListener("submit", async (e) => {
 
