@@ -40,5 +40,3 @@ pokemonCounterText.innerHTML = "Amount of Pokemon found: " + counterUpdate;
 
 
 
-
-
