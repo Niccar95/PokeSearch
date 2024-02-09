@@ -7,7 +7,7 @@ import { fetchPokemon } from '../js/services/PokemonService';
 const pageTop = document.getElementById("pageTop");
 
 const pokeBallLogo = document.createElement("img");
-pokeBallLogo.src = "../src/img/pokeball.svg";
+pokeBallLogo.src = "/src/img/pokeball.svg";
 pokeBallLogo.className = "pokeBallLogo";
 
 pageTop.appendChild(pokeBallLogo);
