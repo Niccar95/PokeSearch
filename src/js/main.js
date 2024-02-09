@@ -4,14 +4,6 @@ import { createHtml, pokemonCounter } from '../js/createHtml';
 import { fetchPokemon } from '../js/services/PokemonService';
 
 
-const pageTop = document.getElementById("pageTop");
-
-const pokeBallLogo = document.createElement("img");
-pokeBallLogo.src = "/src/img/pokeball.svg";
-pokeBallLogo.className = "pokeBallLogo";
-
-pageTop.appendChild(pokeBallLogo);
-
 const pokemonForm = document.getElementById("pokemonForm");
 
 const pokemonCounterText = document.getElementById("pokemonCounter");
