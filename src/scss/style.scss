@@ -1,3 +1,5 @@
+@use "breakpoints";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,15 +25,26 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2em;
+  background: linear-gradient(to right, #ffcc00, #ff4d4d);
+  padding: 1em;
+  
+  @include breakpoints.desktop(){  
+    padding: 2em;
+
+  }
 }
 
 .pokeBallLogo {
-  width: 100px;
-  margin-left: 2em;
+  width: 70px;
+  margin-left: 1em;
   border: solid white;
   border-radius: 50%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+  @include breakpoints.desktop(){  
+    width: 100px;
+    margin-left: 2em;
+  }
 }
 
 
@@ -42,15 +55,33 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5em;
   line-height: 1.1;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @include breakpoints.desktop(){  
+    font-size: 3.2em;
+
+  }
 }
 
 #mainContainer {
-  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1em;
   width: 100%;
+  height: 100vh;
+
+  @include breakpoints.desktop() { 
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+  }
 }
 
 #pokemonNameContainer {
@@ -58,37 +89,55 @@ h1 {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 0.5em;
-  position: absolute;
-  width: 250px;
+  width: 100%;
   height: auto;
-  max-height: 100%;
-  left: 5em;
-  padding: 2rem;
+  max-height: 140px;
+  padding: 1em;
   background-color: rgb(230, 230, 230);
   border-radius: 0.5em;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow-y: auto;
 
+  @include breakpoints.desktop() {
+    gap: 0.5em;
+    position: absolute;
+    width: 250px;
+    height: auto;
+    max-height: 100%;
+    left: 5em;
+    }
+  }
+  
   .pokemonNameText {
     display: inline-block;
     background-color: whitesmoke;
-    padding: 0.3em;
+    border-radius: 1em;
+    padding: 0.5em;
     margin: 0;
   }
-}
+
 
 
 #pokeSearchContainer {
-  width: 50%;
-  padding: 2rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
-  background-color: rgb(230, 230, 230);
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  height: 70%;
+  padding: 1em;
+  gap: 0.5em;
   border-radius: 0.5em;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgb(230, 230, 230); 
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+  @include breakpoints.desktop() {    
+    width: 50%;
+    height: 80%;
+    padding: 3rem;
+    gap: 1em;   
+  }
 
   #counterContainer {
     background-color: whitesmoke;
@@ -99,7 +148,7 @@ h1 {
     height: 2em;
     padding: 0.5em;
     border-radius: 0.5em;
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 1.5px 1.5px rgba(0, 0, 0, 0.3);
   
     #pokemonCounter {
       margin: 0;
@@ -142,12 +191,16 @@ button:focus-visible {
 #searchResults {
   width: 100%;
   height: 300px;
-  max-height: 300px;
+  max-height: 200px;
   overflow-x: hidden;
   overflow-y: auto; 
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
   background-color: white;
   border-radius: 0.5em;
+  box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+  @include breakpoints.desktop() {
+    max-height: 300px;
+  }
 }
 
 #progressContainer {
@@ -166,7 +219,7 @@ button:focus-visible {
     height: 2em;
     padding: 0.5em;
     border-radius: 0.5em;
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 1.5px 1.5px rgba(0, 0, 0, 0.3);
   
 
     #timer {
@@ -174,4 +227,18 @@ button:focus-visible {
     font-weight: 500;
   }
 }
+}
+
+.pageBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #ffcc00, #ff4d4d); 
+
+  .copyright {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 }

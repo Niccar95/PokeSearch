@@ -1,6 +1,7 @@
 
-const searchResults = document.getElementById("searchResults");
-const displayedPokemon = new Set();
+export const searchResults = document.getElementById("searchResults");
+export const displayedPokemon = new Set();
+export const pokemonNameContainer = document.getElementById("pokemonNameContainer");
 
 let counter = 0;
 
@@ -8,8 +9,15 @@ export const pokemonCounter = () => {
 return counter;
 };
 
+export const counterReset = () => {
+  counter = 0;
+  return '';
+}
 
  export const createHtml = (pokemonData) => {
+
+  const pokemonNameText = document.createElement("p");
+  pokemonNameText.classList.add("pokemonNameText");
 
   const pokemonId = pokemonData.id; 
   
@@ -20,26 +28,18 @@ return counter;
   pokemonSprite.alt = pokemonData.name;
   pokemonSprite.title = pokemonData.name;
   searchResults.appendChild(pokemonSprite);
+
+  pokemonNameContainer.appendChild(pokemonNameText);
+  pokemonNameText.innerHTML = pokemonData.name;
   displayedPokemon.add(pokemonData.name);
+
   counter++;
   }
 
   else {
-    pokemonName.innerHTML = ""; 
+    pokemonNameText.innerHTML = ""; 
   }
-  
-  if(pokemonId >= 1 && pokemonId <= 151 && !displayedPokemon.has(pokemonId)) {
-    const pokemonNameContainer = document.getElementById("pokemonNameContainer");
-    
-    const pokemonNameText = document.createElement("p");
-    pokemonNameText.classList.add("pokemonNameText");
-    pokemonNameContainer.appendChild(pokemonNameText);
-    pokemonNameText.innerHTML = pokemonData.name;
-  } 
 
-  else {
-    pokemonNameText.innerHTML = "";
-  }
   
     if (displayedPokemon.size === 151) {
   

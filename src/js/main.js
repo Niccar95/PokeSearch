@@ -6,7 +6,7 @@ import { fetchPokemon } from '../js/services/PokemonService';
 
 const pokemonForm = document.getElementById("pokemonForm");
 
-const pokemonCounterText = document.getElementById("pokemonCounter");
+export const pokemonCounterText = document.getElementById("pokemonCounter");
 
 challengeTimer();
 

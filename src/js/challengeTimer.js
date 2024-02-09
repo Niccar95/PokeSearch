@@ -1,4 +1,5 @@
-
+import { counterReset, displayedPokemon, pokemonNameContainer, searchResults } from "./createHtml";
+import { pokemonCounterText } from "./main";
 
 
  export const challengeTimer = () => {
@@ -22,6 +23,11 @@
  
   timerStartButton.addEventListener("click", ()=> {
 
+    searchResults.innerHTML = "";
+    pokemonNameContainer.innerHTML = "";
+    pokemonCounterText.innerHTML = counterReset();
+
+    displayedPokemon.clear();
     searchInput.disabled = false;
 
     interval = setInterval(() => {
@@ -45,7 +51,7 @@
     }, 1000);
 
     timerStartButton.hidden = true;
-    timerEndButton.hidden = false;  
+    timerEndButton.hidden = false; 
   });
 
     timerEndButton.addEventListener("click", ()=> {
@@ -56,5 +62,6 @@
 
       timerStartButton.hidden = false;
       timerEndButton.hidden = true;
+
   });
  };
