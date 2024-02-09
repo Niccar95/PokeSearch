@@ -1,4 +1,4 @@
-import { get } from "./serviceBase";
+import { get } from "../services/serviceBase";
 
 
 export const fetchPokemon = async (searchPokemon) => {

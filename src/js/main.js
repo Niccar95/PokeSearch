@@ -1,7 +1,7 @@
 import './../scss/style.scss'
-import { challengeTimer } from './challengeTimer';
-import { createHtml, pokemonCounter } from './createHtml';
-import { fetchPokemon } from './services/pokemonService';
+import { challengeTimer } from '../js/challengeTimer';
+import { createHtml, pokemonCounter } from '../js/createHtml';
+import { fetchPokemon } from '../js/services/PokemonService';
 
 
 const pageTop = document.getElementById("pageTop");
