@@ -10,13 +10,36 @@ export const pokemonCounterText = document.getElementById("pokemonCounter");
 
 challengeTimer();
 
+
+const changeInput = (input) => {
+  
+  if (input.toLowerCase() === "mr mime" || input.toLowerCase() === "mr. mime") {
+    return "mr-mime";
+  }
+  
+  if (input.toLowerCase() === "nidoran female" || input.toLowerCase() === "nidoran f") {
+    return "nidoran-f";
+  } 
+
+  if (input.toLowerCase() === "nidoran male" || input.toLowerCase() === "nidoran m") {
+    return "nidoran-m";
+  } 
+  
+  else {
+    return input.toLowerCase().replace(/-/g, ' ');
+  }
+};
+
+
 pokemonForm.addEventListener("submit", async (e) => {
 
 
 e.preventDefault();
 
 
-const searchPokemon = document.getElementById("searchPokemon").value;
+let searchPokemon = document.getElementById("searchPokemon").value;
+
+searchPokemon = changeInput(searchPokemon);
 
 const data = await fetchPokemon(searchPokemon);
 
