@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
   margin: 0;
 }
 
@@ -9,7 +10,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
 }
 
 a {
@@ -21,16 +21,59 @@ a:hover {
   color: #535bf2;
 }
 
-#pageTop {
+#landingPage {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to right, #ffcc00, #ff4d4d);
-  padding: 1em;
-  
-  @include breakpoints.desktop(){  
-    padding: 2em;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  @include breakpoints.desktop() {
+  }
 
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding: 1em;
+    @include breakpoints.desktop() {
+      padding: 2em;
+    }
+    .navList {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    position: absolute;
+    width: 100%;
+
+    .hero {
+      display: flex;
+      align-items: center;
+    }
+
+    .playButton {
+      width: 140px;
+    }
+  }
+
+  video {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -41,17 +84,10 @@ a:hover {
   border-radius: 50%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 
-  @include breakpoints.desktop(){  
+  @include breakpoints.desktop() {
     width: 100px;
     margin-left: 2em;
   }
-}
-
-
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 h1 {
@@ -60,15 +96,14 @@ h1 {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
-  @include breakpoints.desktop(){  
+  @include breakpoints.desktop() {
     font-size: 3.2em;
-
   }
 }
 
-#mainContainer {
+#mainSection {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1.5em;
@@ -76,7 +111,7 @@ h1 {
   width: 100%;
   height: 100vh;
 
-  @include breakpoints.desktop() { 
+  @include breakpoints.desktop() {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
@@ -95,7 +130,7 @@ h1 {
   padding: 1em;
   background-color: rgb(230, 230, 230);
   border-radius: 0.5em;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
 
   @include breakpoints.desktop() {
@@ -105,18 +140,16 @@ h1 {
     height: auto;
     max-height: 100%;
     left: 5em;
-    }
   }
-  
-  .pokemonNameText {
-    display: inline-block;
-    background-color: whitesmoke;
-    border-radius: 1em;
-    padding: 0.5em;
-    margin: 0;
-  }
+}
 
-
+.pokemonNameText {
+  display: inline-block;
+  background-color: whitesmoke;
+  border-radius: 1em;
+  padding: 0.5em;
+  margin: 0;
+}
 
 #pokeSearchContainer {
   display: flex;
@@ -129,14 +162,14 @@ h1 {
   padding: 1em;
   gap: 0.5em;
   border-radius: 0.5em;
-  background-color: rgb(230, 230, 230); 
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: rgb(230, 230, 230);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
-  @include breakpoints.desktop() {    
+  @include breakpoints.desktop() {
     width: 50%;
     height: 80%;
     padding: 3rem;
-    gap: 1em;   
+    gap: 1em;
   }
 
   #counterContainer {
@@ -149,20 +182,19 @@ h1 {
     padding: 0.5em;
     border-radius: 0.5em;
     box-shadow: inset 0px 0px 1.5px 1.5px rgba(0, 0, 0, 0.3);
-  
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+
     #pokemonCounter {
       margin: 0;
       font-weight: 500;
     }
   }
-  
-
 }
 
 button {
   color: whitesmoke;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -172,20 +204,18 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: white;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
 #searchPokemon {
   padding: 0.5em;
   width: 200px;
   box-sizing: border-box;
   border-radius: 8px;
-
 }
 
 #searchResults {
@@ -193,10 +223,10 @@ button:focus-visible {
   height: 300px;
   max-height: 200px;
   overflow-x: hidden;
-  overflow-y: auto; 
+  overflow-y: auto;
   background-color: white;
   border-radius: 0.5em;
-  box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
 
   @include breakpoints.desktop() {
     max-height: 300px;
@@ -219,14 +249,13 @@ button:focus-visible {
     height: 2em;
     padding: 0.5em;
     border-radius: 0.5em;
-    box-shadow: inset 0px 0px 1.5px 1.5px rgba(0, 0, 0, 0.3);
-  
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
 
     #timer {
-    margin: 0;
-    font-weight: 500;
+      margin: 0;
+      font-weight: 500;
+    }
   }
-}
 }
 
 .pageBottom {
@@ -235,7 +264,7 @@ button:focus-visible {
   justify-content: center;
   width: 100%;
   height: 100px;
-  background: linear-gradient(to right, #ffcc00, #ff4d4d); 
+  background-color: rgb(40, 40, 40);
 
   .copyright {
     color: white;
