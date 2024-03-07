@@ -22,7 +22,7 @@
   }
 
   .navigation {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
@@ -38,12 +38,15 @@
     .navList {
       list-style-type: none;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       height: 100%;
       width: 100%;
       padding: 0;
       margin: 0;
+      @include breakpoints.desktop() {
+        justify-content: space-evenly;
+      }
 
       li {
         color: white;
@@ -127,7 +130,16 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: relative;
+  }
+}
+
+#leftSection {
+  @include breakpoints.desktop() {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 80%;
   }
 }
 
@@ -140,18 +152,16 @@ h1 {
   height: auto;
   max-height: 140px;
   padding: 1em;
-  background-color: rgb(230, 230, 230);
-  border-radius: 0.5em;
+  background-color: rgb(197, 203, 209);
+  border: solid white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
 
   @include breakpoints.desktop() {
     gap: 0.5em;
-    position: absolute;
-    width: 250px;
+    width: 100%;
     height: auto;
     max-height: 100%;
-    left: 5em;
   }
 }
 
@@ -174,7 +184,8 @@ h1 {
   padding: 1em;
   gap: 0.5em;
 
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(197, 203, 209);
+  border: solid white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
   @include breakpoints.desktop() {
@@ -182,6 +193,7 @@ h1 {
     height: 80%;
     padding: 3rem;
     gap: 1em;
+    position: relative;
   }
 
   #counterContainer {
@@ -237,7 +249,8 @@ button:focus-visible {
   max-height: 200px;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: whitesmoke;
+  border: solid white;
   box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
 
   @include breakpoints.desktop() {
