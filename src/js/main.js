@@ -2,12 +2,14 @@ import "./../scss/style.scss";
 import { challengeTimer } from "../js/challengeTimer";
 import { createHtml, pokemonCounter } from "../js/createHtml";
 import { fetchPokemon } from "../js/services/PokemonService";
+import { gameModal } from "./modal";
 
 const pokemonForm = document.getElementById("pokemonForm");
 
 export const pokemonCounterText = document.getElementById("pokemonCounter");
 
 challengeTimer();
+gameModal();
 
 const changeInput = (input) => {
   if (input.toLowerCase() === "mr mime" || input.toLowerCase() === "mr. mime") {

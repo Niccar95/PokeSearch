@@ -5,7 +5,6 @@ export default {
     rollupOptions: {
       input: {
         main: "index.html",
-        projects: "pokeSearch.html",
       },
     },
   },

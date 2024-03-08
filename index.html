@@ -22,6 +22,57 @@
         </ul>
       </nav>
 
+      <section id="modal">
+        <section id="mainSection">
+          <section class="leftContainer">
+            <section class="rulesContainer">
+              <h3>How to play</h3>
+              <ol>
+                <li>
+                  Press the "Start Challenge" button to activate the search bar.
+                </li>
+                <li>Once the button is pressed the timer will start.</li>
+                <li>
+                  Search for as many Pokemon as you can before the timer ends!
+                </li>
+              </ol>
+              <p><b>You can only search for Kanto Pokemon!</b></p>
+            </section>
+          </section>
+
+          <section id="pokeSearchContainer">
+            <form id="pokemonForm">
+              <input
+                type="text"
+                id="searchPokemon"
+                placeholder="Type Pokemon"
+              />
+              <button id="searchButton">Search</button>
+            </form>
+
+            <div id="counterContainer">
+              <p id="pokemonCounter"></p>
+            </div>
+
+            <section id="searchResults"></section>
+
+            <section id="progressContainer">
+              <div id="timerContainer">
+                <p id="timer"></p>
+              </div>
+
+              <button id="timerStartButton"></button>
+              <button id="timerEndButton"></button>
+            </section>
+          </section>
+
+          <section class="rightContainer">
+            <h3>Pokemon</h3>
+            <section id="pokemonNameContainer"></section>
+          </section>
+        </section>
+      </section>
+
       <section class="heroContainer">
         <section class="hero">
           <h1>PokeSearch</h1>
@@ -31,9 +82,7 @@
           Find as many pokemon as you can before the time runs out!
         </p>
 
-        <a href="./pokeSearch.html"
-          ><button class="playButton">Get started</button></a
-        >
+        <button class="playButton">Get started</button>
       </section>
 
       <video autoplay muted loop>
@@ -44,51 +93,6 @@
         Your browser does not support the video tag.
       </video>
     </header>
-
-    <section id="mainSection">
-      <section class="leftContainer">
-        <section class="rulesContainer">
-          <h3>How to play</h3>
-          <ol>
-            <li>
-              Press the "Start Challenge" button to activate the search bar.
-            </li>
-            <li>Once the button is pressed the timer will start.</li>
-            <li>
-              Search for as many Pokemon as you can before the timer ends!
-            </li>
-          </ol>
-          <p><b>You can only search for Kanto Pokemon!</b></p>
-        </section>
-      </section>
-
-      <section id="pokeSearchContainer">
-        <form id="pokemonForm">
-          <input type="text" id="searchPokemon" placeholder="Type Pokemon" />
-          <button id="searchButton">Search</button>
-        </form>
-
-        <div id="counterContainer">
-          <p id="pokemonCounter"></p>
-        </div>
-
-        <section id="searchResults"></section>
-
-        <section id="progressContainer">
-          <div id="timerContainer">
-            <p id="timer"></p>
-          </div>
-
-          <button id="timerStartButton"></button>
-          <button id="timerEndButton"></button>
-        </section>
-      </section>
-
-      <section class="rightContainer">
-        <h3>Pokemon</h3>
-        <section id="pokemonNameContainer"></section>
-      </section>
-    </section>
     <footer class="pageBottom">
       <p class="copyright">
         &copy; 2024 Nicolas Carrasco. All rights reserved.
