@@ -1,5 +1,12 @@
 export default {
-
-  base: "/PokeSearch"
-
+  base: "/PokeSearch/",
+  build: {
+    assetsDir: "assets",
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        projects: "pokeSearch.html",
+      },
+    },
+  },
 };
