@@ -1,8 +1,7 @@
-import './../scss/style.scss'
-import { challengeTimer } from '../js/challengeTimer';
-import { createHtml, pokemonCounter } from '../js/createHtml';
-import { fetchPokemon } from '../js/services/PokemonService';
-
+import "./../scss/style.scss";
+import { challengeTimer } from "../js/challengeTimer";
+import { createHtml, pokemonCounter } from "../js/createHtml";
+import { fetchPokemon } from "../js/services/PokemonService";
 
 const pokemonForm = document.getElementById("pokemonForm");
 
@@ -10,48 +9,43 @@ export const pokemonCounterText = document.getElementById("pokemonCounter");
 
 challengeTimer();
 
-
 const changeInput = (input) => {
-  
   if (input.toLowerCase() === "mr mime" || input.toLowerCase() === "mr. mime") {
     return "mr-mime";
   }
-  
-  if (input.toLowerCase() === "nidoran female" || input.toLowerCase() === "nidoran f") {
-    return "nidoran-f";
-  } 
 
-  if (input.toLowerCase() === "nidoran male" || input.toLowerCase() === "nidoran m") {
+  if (
+    input.toLowerCase() === "nidoran female" ||
+    input.toLowerCase() === "nidoran f"
+  ) {
+    return "nidoran-f";
+  }
+
+  if (
+    input.toLowerCase() === "nidoran male" ||
+    input.toLowerCase() === "nidoran m"
+  ) {
     return "nidoran-m";
-  } 
-  
-  else {
-    return input.toLowerCase().replace(/-/g, ' ');
+  } else {
+    return input.toLowerCase().replace(/-/g, " ");
   }
 };
 
-
 pokemonForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
+  let searchPokemon = document.getElementById("searchPokemon").value;
 
-e.preventDefault();
+  searchPokemon = changeInput(searchPokemon);
 
+  const data = await fetchPokemon(searchPokemon);
 
-let searchPokemon = document.getElementById("searchPokemon").value;
+  createHtml(data);
 
-searchPokemon = changeInput(searchPokemon);
+  document.getElementById("searchPokemon").value = "";
 
-const data = await fetchPokemon(searchPokemon);
+  const counterUpdate = pokemonCounter();
 
-createHtml(data);
-
-document.getElementById("searchPokemon").value = "";
-
-const counterUpdate = pokemonCounter();
-
-pokemonCounterText.innerHTML = "Amount of Pokemon found: " + counterUpdate;
-
+  pokemonCounterText.innerHTML =
+    "Amount of Pokemon found: " + counterUpdate + " " + "/ 151";
 });
-
-
-

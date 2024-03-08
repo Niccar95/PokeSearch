@@ -27,6 +27,9 @@
           <h1>PokeSearch</h1>
           <img class="pokeBallLogo" src="./src/img/pokeball.svg" />
         </section>
+        <p class="description">
+          Find as many pokemon as you can before the time runs out!
+        </p>
 
         <a href="#mainSection"
           ><button class="playButton">Get started</button></a
@@ -58,7 +61,23 @@
     -->
 
     <section id="mainSection">
-      <div id="pokeSearchContainer">
+      <section class="leftContainer">
+        <section class="rulesContainer">
+          <h3>How to play</h3>
+          <ol>
+            <li>
+              Press the "Start Challenge" button to activate the search bar.
+            </li>
+            <li>Once the button is pressed the timer will start.</li>
+            <li>
+              Search for as many Pokemon as you can before the timer ends!
+            </li>
+          </ol>
+          <p><b>You can only search for Kanto Pokemon!</b></p>
+        </section>
+      </section>
+
+      <section id="pokeSearchContainer">
         <form id="pokemonForm">
           <input type="text" id="searchPokemon" placeholder="Type Pokemon" />
           <button id="searchButton">Search</button>
@@ -78,9 +97,10 @@
           <button id="timerStartButton"></button>
           <button id="timerEndButton"></button>
         </section>
-      </div>
+      </section>
 
-      <section id="leftSection">
+      <section class="rightContainer">
+        <h3>Pokemon</h3>
         <section id="pokemonNameContainer"></section>
       </section>
     </section>

@@ -1,14 +1,12 @@
 @use "breakpoints";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
@@ -32,6 +30,7 @@
     justify-content: center;
     height: 80px;
     padding: 1em;
+    background-color: rgb(20, 20, 20);
     @include breakpoints.desktop() {
       padding: 2em;
     }
@@ -66,12 +65,18 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
+    padding: 2em;
     position: absolute;
     width: 100%;
 
     .hero {
       display: flex;
       align-items: center;
+    }
+
+    .description {
+      color: white;
+      text-align: center;
     }
 
     .playButton {
@@ -97,8 +102,7 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 
   @include breakpoints.desktop() {
-    width: 100px;
-    margin-left: 2em;
+    width: 80px;
   }
 }
 
@@ -118,7 +122,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 1em;
   padding: 1em;
   width: 100%;
   height: 100vh;
@@ -127,50 +131,118 @@ h1 {
 
   @include breakpoints.desktop() {
     display: flex;
+    gap: 1.5em;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
 }
 
-#leftSection {
+.rightContainer {
+  background-color: rgb(197, 203, 209);
+  border: solid 5px white;
+  width: 100%;
+  height: 140px;
+  padding: 0.5em;
+
   @include breakpoints.desktop() {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 250px;
+    width: 280px;
     height: 80%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 1em;
   }
-}
 
-#pokemonNameContainer {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  width: 100%;
-  height: auto;
-  max-height: 140px;
-  padding: 1em;
-  background-color: rgb(197, 203, 209);
-  border: solid white;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  overflow-y: auto;
+  h3 {
+    text-align: center;
+    margin: 0;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    height: 30%;
 
-  @include breakpoints.desktop() {
+    @include breakpoints.desktop() {
+      height: 10%;
+    }
+  }
+
+  #pokemonNameContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 0.5em;
     width: 100%;
     height: auto;
-    max-height: 100%;
+    max-height: 70%;
+    overflow-y: auto;
+    padding: 0.5em;
+
+    @include breakpoints.desktop() {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      width: 100%;
+      height: auto;
+      max-height: 90%;
+      padding: none;
+    }
+
+    .pokemonNameText {
+      display: inline-block;
+      background-color: whitesmoke;
+      border-radius: 1em;
+      padding: 0.5em;
+    }
   }
 }
 
-.pokemonNameText {
-  display: inline-block;
-  background-color: whitesmoke;
-  border-radius: 1em;
-  padding: 0.5em;
-  margin: 0;
+.leftContainer {
+  display: none;
+
+  @include breakpoints.desktop() {
+    background-color: rgb(197, 203, 209);
+    border: solid 5px white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 80%;
+  }
+
+  .rulesContainer {
+    @include breakpoints.desktop() {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 1em;
+      gap: 2em;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+    }
+
+    h3 {
+      margin: 0;
+      color: whitesmoke;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    ol {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      padding: 0.5em;
+      margin: 0;
+      background-color: whitesmoke;
+      list-style-position: inside;
+    }
+  }
 }
 
 #pokeSearchContainer {
@@ -183,9 +255,8 @@ h1 {
   height: 70%;
   padding: 1em;
   gap: 0.5em;
-
   background-color: rgb(197, 203, 209);
-  border: solid white;
+  border: solid 5px white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
   @include breakpoints.desktop() {
@@ -201,11 +272,15 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 100%;
     height: 2em;
     padding: 0.5em;
     box-shadow: inset 0px 0px 1.5px 1.5px rgba(0, 0, 0, 0.3);
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+    @include breakpoints.desktop() {
+      width: 55%;
+    }
 
     #pokemonCounter {
       margin: 0;
@@ -288,7 +363,7 @@ button:focus-visible {
   justify-content: center;
   width: 100%;
   height: 100px;
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(20, 20, 20);
 
   .copyright {
     color: white;
