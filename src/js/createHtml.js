@@ -1,55 +1,53 @@
-
 export const searchResults = document.getElementById("searchResults");
 export const displayedPokemon = new Set();
-export const pokemonNameContainer = document.getElementById("pokemonNameContainer");
+export const pokemonNameContainer = document.getElementById(
+  "pokemonNameContainer"
+);
 
 let counter = 0;
 
 export const pokemonCounter = () => {
-return counter;
+  return counter;
 };
 
 export const counterReset = () => {
   counter = 0;
-  return '';
-}
+  return "";
+};
 
- export const createHtml = (pokemonData) => {
-
+export const createHtml = (pokemonData) => {
   const pokemonNameText = document.createElement("p");
   pokemonNameText.classList.add("pokemonNameText");
 
-  const pokemonId = pokemonData.id; 
-  
-  if (pokemonId >= 1 && pokemonId <= 151 && !displayedPokemon.has(pokemonData.name)) { 
-    
-  const pokemonSprite = document.createElement("img");
-  pokemonSprite.src = pokemonData.sprites.front_default;
-  pokemonSprite.alt = pokemonData.name;
-  pokemonSprite.title = pokemonData.name;
-  searchResults.appendChild(pokemonSprite);
+  const pokemonId = pokemonData.id;
 
-  pokemonNameContainer.appendChild(pokemonNameText);
-  pokemonNameText.innerHTML = pokemonData.name;
-  displayedPokemon.add(pokemonData.name);
+  if (
+    pokemonId >= 1 &&
+    pokemonId <= 151 &&
+    !displayedPokemon.has(pokemonData.name)
+  ) {
+    const pokemonSprite = document.createElement("img");
+    pokemonSprite.src = pokemonData.sprites.front_default;
+    pokemonSprite.alt = pokemonData.name;
+    pokemonSprite.title = pokemonData.name;
+    searchResults.appendChild(pokemonSprite);
 
-  counter++;
+    pokemonNameContainer.appendChild(pokemonNameText);
+    pokemonNameText.innerHTML = pokemonData.name;
+    displayedPokemon.add(pokemonData.name);
+
+    pokemonNameText.style.backgroundColor = randomColor();
+
+    counter++;
+  } else {
+    pokemonNameText.innerHTML = "";
   }
 
-  else {
-    pokemonNameText.innerHTML = ""; 
+  if (displayedPokemon.size === 151) {
+    const progressContainer = document.getElementById("progressContainer");
+    const congratulations = document.createElement("p");
+    progressContainer.appendChild(congratulations);
+    congratulations.innerHTML =
+      "Congratulations! You have listed all the Pokemon from the Kanto region!";
   }
-
-  
-    if (displayedPokemon.size === 151) {
-  
-      const progressContainer = document.getElementById("progressContainer");
-      const congratulations = document.createElement("p");
-      progressContainer.appendChild(congratulations);
-      congratulations.innerHTML = "Congratulations! You have listed all the Pokemon from the Kanto region!";
-    } 
-  };
-
-
-
-  
+};
