@@ -148,7 +148,7 @@ h1 {
 #mainSection {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1em;
   padding: 1em;
@@ -271,6 +271,28 @@ h1 {
   }
 }
 
+#selectionContainer {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 55px;
+  background-color: rgb(197, 203, 209);
+  border: solid 5px white;
+
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+  @include breakpoints.desktop() {
+    display: none;
+  }
+}
+
+.navIcon {
+  margin-left: 1.5em;
+  width: 25px;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+}
+
 #pokeSearchContainer {
   display: flex;
   flex-direction: column;
@@ -298,6 +320,8 @@ h1 {
     background-color: #721121;
     top: -60px;
     right: -5px;
+    padding: 10px 20px;
+    cursor: pointer;
 
     @include breakpoints.desktop() {
       padding: 0.3em 0.8em;
@@ -314,7 +338,7 @@ h1 {
     width: 100%;
     height: 2em;
     padding: 0.5em;
-    box-shadow: inset 0px 0px 1.5px 1.5px rgba(0, 0, 0, 0.3);
+
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
 
     @include breakpoints.desktop() {
