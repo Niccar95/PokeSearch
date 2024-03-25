@@ -36,7 +36,20 @@ export const createHtml = (pokemonData) => {
     pokemonNameText.innerHTML = pokemonData.name;
     displayedPokemon.add(pokemonData.name);
 
-    pokemonNameText.style.backgroundColor = randomColor();
+    let color = randomColor();
+
+    pokemonNameText.style.backgroundColor = color;
+    pokemonSprite.style.backgroundColor = color;
+    pokemonSprite.style.borderRadius = "50%";
+    pokemonSprite.style.width = "75px";
+
+    pokemonSprite.classList.add("pokemonSprite");
+
+    setTimeout(() => {
+      searchResults.scrollTop = searchResults.scrollHeight;
+    }, 100);
+
+    console.log(searchResults.scrollHeight);
 
     counter++;
   } else {
