@@ -40,14 +40,12 @@ export const createHtml = (pokemonData) => {
 
     pokemonNameText.style.backgroundColor = color;
     pokemonSprite.style.backgroundColor = color;
-    pokemonSprite.style.borderRadius = "50%";
-    pokemonSprite.style.width = "75px";
 
     pokemonSprite.classList.add("pokemonSprite");
 
     setTimeout(() => {
       searchResults.scrollTop = searchResults.scrollHeight;
-    }, 100);
+    }, 200);
 
     console.log(searchResults.scrollHeight);
 
