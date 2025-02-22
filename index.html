@@ -20,14 +20,6 @@
   </head>
   <body>
     <header id="landingPage">
-      <nav class="navigation">
-        <ul class="navList">
-          <li><a href="#">Badges</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
-
       <section id="modal">
         <section id="mainSection">
           <section class="leftContainer">
@@ -42,7 +34,7 @@
                   Search for as many Pokemon as you can before the timer ends!
                 </li>
               </ol>
-              <p><b>You can only search for Kanto Pokemon!</b></p>
+              <p><b>You can only search for Gen 1 (Kanto) Pokemon!</b></p>
             </section>
           </section>
 
@@ -72,6 +64,7 @@
 
             <section id="progressContainer">
               <div id="timerContainer">
+                <i class="bi bi-stopwatch"></i>
                 <p id="timer"></p>
               </div>
 
@@ -93,7 +86,8 @@
           <img class="pokeBallLogo" src="./src/img/pokeball.svg" />
         </section>
         <p class="description">
-          Find as many pokemon as you can before the time runs out!
+          Test your Gen 1 Pokemon knowledge by typing as many pokemon as you can
+          before the time runs out!
         </p>
 
         <button class="playButton">Get started</button>
@@ -108,9 +102,7 @@
       </video>
     </header>
     <footer class="pageBottom">
-      <p class="copyright">
-        &copy; 2024 Nicolas Carrasco. All rights reserved.
-      </p>
+      <p class="copyright">&copy; 2024 Nicolas Carrasco.</p>
     </footer>
 
     <script type="module" src="/src/js/main.js"></script>

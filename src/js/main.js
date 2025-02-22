@@ -1,4 +1,6 @@
 import "./../scss/style.scss";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import { challengeTimer } from "../js/challengeTimer";
 import { createHtml, pokemonCounter } from "../js/createHtml";
 import { fetchPokemon } from "../js/services/PokemonService";
