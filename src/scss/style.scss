@@ -1,12 +1,12 @@
 @use "breakpoints";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   line-height: 1.5;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
 }
 
@@ -35,54 +35,26 @@ button:active {
   transform: translateY(1px);
 }
 
+button.hideModalButton {
+  position: absolute;
+  background-color: #721121;
+  bottom: 20px;
+  z-index: 2;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include breakpoints.desktop() {
+    bottom: 15px;
+  }
+}
+
 #landingPage {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100vh;
-  @include breakpoints.desktop() {
-  }
-
-  .navigation {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
-    padding: 1em;
-    background-color: rgb(20, 20, 20);
-    @include breakpoints.desktop() {
-      padding: 2em;
-    }
-    .navList {
-      list-style-type: none;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: 100%;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      @include breakpoints.desktop() {
-        justify-content: space-evenly;
-      }
-
-      li {
-        color: white;
-
-        a {
-          color: white;
-          cursor: pointer;
-          text-decoration: none;
-        }
-      }
-    }
-  }
 
   .heroContainer {
     display: flex;
@@ -145,17 +117,16 @@ h1 {
 #modal {
   display: none;
   position: fixed;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   width: 100vw;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 #mainSection {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   gap: 1em;
@@ -167,25 +138,24 @@ h1 {
     display: flex;
     gap: 1.5em;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
   }
 }
 
 .rightContainer {
-  background-color: rgb(197, 203, 209);
-  border: solid 2px white;
-  width: 100%;
-  height: 140px;
-  padding: 0.5em;
+  display: none;
 
   @include breakpoints.desktop() {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 280px;
-    height: 80%;
+    height: 90%;
     padding: 1em;
+    background-color: #e3e6e8;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
   }
 
   h3 {
@@ -236,13 +206,14 @@ h1 {
   display: none;
 
   @include breakpoints.desktop() {
-    background-color: rgb(197, 203, 209);
-    border: solid 2px white;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #e3e6e8;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     width: 280px;
-    height: 80%;
+    height: 90%;
   }
 
   .rulesContainer {
@@ -277,27 +248,6 @@ h1 {
   }
 }
 
-#selectionContainer {
-  display: flex;
-  align-items: center;
-  width: 60%;
-  height: 55px;
-  background-color: rgb(197, 203, 209);
-  border: solid 2px white;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
-  @include breakpoints.desktop() {
-    display: none;
-  }
-}
-
-.navIcon {
-  margin-left: 1.5em;
-  width: 25px;
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-  cursor: pointer;
-}
-
 #pokeSearchContainer {
   display: flex;
   flex-direction: column;
@@ -305,41 +255,54 @@ h1 {
   justify-content: space-between;
   text-align: center;
   width: 100%;
-  height: 60%;
+  height: 90%;
   padding: 1em;
   gap: 0.5em;
-  background-color: rgb(197, 203, 209);
-  border: solid 2px white;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: #e3e6e8;
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
   position: relative;
 
   @include breakpoints.desktop() {
     width: 50%;
-    height: 80%;
+    height: 90%;
     padding: 3rem;
     gap: 1em;
   }
 
-  .hideModalButton {
+  #pokemonForm {
+    width: 100%;
+    justify-content: flex-start;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    background-color: #721121;
-    top: -60px;
-    right: -5px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    cursor: pointer;
 
     @include breakpoints.desktop() {
-      padding: 0.3em 0.8em;
-      top: 10px;
-      right: 10px;
+      justify-content: center;
+    }
+
+    #searchPokemon {
+      font-size: 1em;
+      border: 1px solid white;
+      padding: 0.6em;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.1s;
+
+      @include breakpoints.desktop() {
+        width: 300px;
+      }
+    }
+    #searchPokemon:hover {
+      border: solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    button#searchButton {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
-
   #counterContainer {
     background-color: whitesmoke;
     display: flex;
@@ -348,7 +311,6 @@ h1 {
     width: 100%;
     height: 2em;
     padding: 0.5em;
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
 
     @include breakpoints.desktop() {
       width: 55%;
@@ -361,18 +323,6 @@ h1 {
   }
 }
 
-#searchPokemon {
-  font-size: 1em;
-  border: 1px solid white;
-  padding: 0.6em;
-  width: 200px;
-  box-sizing: border-box;
-
-  @include breakpoints.desktop() {
-    width: 300px;
-  }
-}
-
 #searchResults {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -381,8 +331,7 @@ h1 {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: whitesmoke;
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
-
+  box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.2);
   padding: 1.2em;
   gap: 1.5em;
   scroll-behavior: smooth;
@@ -418,7 +367,6 @@ h1 {
     width: 150px;
     height: 2em;
     padding: 0.5em;
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
 
     .bi-stopwatch {
       position: absolute;
