@@ -51,5 +51,5 @@ pokemonForm.addEventListener("submit", async (e) => {
   const counterUpdate = pokemonCounter();
 
   pokemonCounterText.innerHTML =
-    "Amount of Pokemon found: " + counterUpdate + " " + "/ 151";
+    "Pokemon found: " + counterUpdate + " " + "/ 151";
 });
