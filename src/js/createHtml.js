@@ -27,9 +27,8 @@ export const createHtml = (pokemonData) => {
     !displayedPokemon.has(pokemonData.name)
   ) {
     const pokemonSprite = document.createElement("img");
-    pokemonSprite.src =
-      pokemonData.sprites.other["official-artwork"].front_default;
-    console.log(pokemonData);
+    pokemonSprite.src = pokemonData.sprite;
+
     pokemonSprite.alt = pokemonData.name;
     pokemonSprite.title = pokemonData.name;
     searchResults.appendChild(pokemonSprite);
