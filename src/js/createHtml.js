@@ -47,8 +47,6 @@ export const createHtml = (pokemonData) => {
       searchResults.scrollTop = searchResults.scrollHeight;
     }, 200);
 
-    console.log(searchResults.scrollHeight);
-
     counter++;
   } else {
     pokemonNameText.innerHTML = "";
