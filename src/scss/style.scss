@@ -19,6 +19,20 @@
   margin-right: 4px;
 }
 
+#countdownDisplay {
+  position: absolute;
+  top: 20%;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+  color: #d33;
+
+   @include breakpoints.desktop() {
+      top: 40%; 
+    }
+}
+
 button {
   color: whitesmoke;
   padding: 0.6em 1.5em;
@@ -314,13 +328,16 @@ h1 {
   .formWrapper {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-between;
     gap: 1em;
     width: 100%;
+    height: 75%;
+
 
     @include breakpoints.desktop() {
-       flex-direction: column;
+      height: 100%;
+      flex-direction: column;
   }
 
     #pokemonForm {
@@ -382,33 +399,35 @@ h1 {
         font-weight: 500;
       }
     }
-  }
-  
-  #searchResults {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: 300px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: whitesmoke;
-    box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.2);
-    padding: 1.2em;
-    gap: 1.5em;
-    scroll-behavior: smooth;
-  
-    @include breakpoints.desktop() {
-      grid-template-columns: repeat(4, 1fr);
-      padding: 1em;
-    }
-  
-    .pokemonSprite {
-      width: 75px;
+    #searchResults {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 75px);
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: whitesmoke;
+      box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.2);
+      padding: 1.2em;
+      gap: 1.5em;
+      scroll-behavior: smooth;
+      flex: 1 1 auto;
+
       @include breakpoints.desktop() {
-        width: 120px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        padding: 1em;
+      }
+    
+      .pokemonSprite {
+        width: 75px;
+        @include breakpoints.desktop() {
+          width: 120px;
+        }
       }
     }
   }
+  
 
 }
 
