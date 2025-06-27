@@ -1,3 +1,5 @@
+import { triggerPokemonAdded } from "./pokemonEventTracker";
+
 export const searchResults = document.getElementById("searchResults");
 export const displayedPokemon = new Set();
 export const pokemonNameContainer = document.getElementById(
@@ -37,6 +39,8 @@ export const createHtml = (pokemonData) => {
     pokemonNameText.innerHTML = pokemonData.name;
     displayedPokemon.add(pokemonData.name);
 
+    triggerPokemonAdded();
+
     let color = randomColor();
 
     pokemonNameText.style.backgroundColor = color;
@@ -50,13 +54,5 @@ export const createHtml = (pokemonData) => {
     counter++;
   } else {
     pokemonNameText.innerHTML = "";
-  }
-
-  if (displayedPokemon.size === 151) {
-    const progressContainer = document.getElementById("progressContainer");
-    const congratulations = document.createElement("p");
-    progressContainer.appendChild(congratulations);
-    congratulations.innerHTML =
-      "Congratulations! You have listed all the Pokemon from the Kanto region!";
   }
 };

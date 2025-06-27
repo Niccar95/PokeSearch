@@ -5,6 +5,7 @@ import {
   searchResults,
 } from "./createHtml";
 import { pokemonCounterText } from "./main";
+import { onPokemonAdded } from "./pokemonEventTracker";
 
 export const challengeTimer = () => {
   const searchInput = document.getElementById("searchPokemon");
@@ -12,6 +13,25 @@ export const challengeTimer = () => {
   const timerEndButton = document.getElementById("timerEndButton");
   const timer = document.getElementById("timer");
   const countdownDisplay = document.getElementById("countdownDisplay");
+
+  let countdownInterval = null;
+  let timerInterval = null;
+
+  onPokemonAdded(() => {
+    if (displayedPokemon.size === 151) {
+      clearInterval(timerInterval);
+      clearInterval(countdownInterval);
+
+      searchInput.disabled = true;
+      timerStartButton.hidden = false;
+      timerEndButton.hidden = true;
+
+      const congratulations = document.getElementById("resultDisplay");
+      congratulations.style.display = "block";
+      congratulations.innerHTML =
+        "🎉 Congratulations! You caught all 151 Pokémon!";
+    }
+  });
 
   searchInput.disabled = true;
 
@@ -21,9 +41,6 @@ export const challengeTimer = () => {
     '<i class="bi bi-sign-stop-fill"></i> End Challenge';
 
   timerEndButton.hidden = true;
-
-  let countdownInterval = null;
-  let timerInterval = null;
 
   timerStartButton.addEventListener("click", () => {
     let countdownSeconds = 3;
